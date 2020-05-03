@@ -1,0 +1,41 @@
+version: '2'
+services:
+  server:
+    build: ./Expressapp
+    ports:
+      - "3000:3000"
+  account-service:
+    build: ./Microservices/Account
+    ports:
+      - "9777:9777"
+    depends_on:
+      - database
+  order-service:
+    build: ./Microservices/Order
+    
+    depends_on:
+      - database 
+      - rabbitmq
+  cart-service:
+    build: ./Microservices/Cart
+    ports:
+      - "9111:9111"
+    depends_on:
+      - database
+      - rabbitmq
+  catalog-service:
+    build: ./Microservices/Catalog  
+    ports:
+      - "9090:9090"
+  database: # name of the third service
+    image: mongo
+    ports:
+     - "27017:27017" # specify port forewarding  
+     - "27018:27018" # specify port forewarding  
+  rabbitmq:
+    image: rabbitmq:management
+    ports:
+      - "15672:15672"
+      - "15671:15671"
+      - "5672:5672"
+    
