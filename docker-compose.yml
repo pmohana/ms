@@ -35,7 +35,5 @@ services:
   rabbitmq:
     image: rabbitmq:management
     ports:
-      - "15672:15672"
-      - "15671:15671"
       - "5672:5672"
     
