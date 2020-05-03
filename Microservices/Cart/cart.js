@@ -87,7 +87,7 @@ module.exports = function cart(options) {
           this.client({
             type: "amqp",
             pin: "component: order, action:checkout",
-            url: "amqp://order-service@5672",
+           url: "amqp://guest:guest@rabbitmq:5672",
           }).act(
             "component: order,action:checkout",
             {
