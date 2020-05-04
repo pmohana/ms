@@ -8,7 +8,7 @@ seneca.use(
   "seneca-amqp-transport"
 );
 seneca.use("mongo-store", {
-  'mongodb://database:27017/cartdb'
+  uri:'mongodb://database:27017/cartdb'
 });
 
 seneca.ready(function (err) {
