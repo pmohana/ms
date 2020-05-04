@@ -8,9 +8,7 @@ seneca.use(
   "seneca-amqp-transport"
 );
 seneca.use("mongo-store", {
-  name: "onlinebookdb",
-  host: "127.0.0.1",
-  port: 27017,
+  'mongodb://database:27017/cartdb'
 });
 
 seneca.ready(function (err) {
