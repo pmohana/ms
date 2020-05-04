@@ -31,7 +31,7 @@ services:
     image: mongo
     ports:
      - "27017:27017" # specify port forewarding  
-     - "27018:27018" # specify port forewarding  
+  
   rabbitmq:
     image: rabbitmq:3-alpine
     ports:
