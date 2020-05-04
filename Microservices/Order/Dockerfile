@@ -1,5 +1,5 @@
 # Use the official image as a parent image
-FROM node:12-slim
+FROM node:current-slim
 
 RUN mkdir -p /usr/src/app
 
